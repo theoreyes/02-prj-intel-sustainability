@@ -1,1 +1,129 @@
-/* Add your CSS here */
+/* Style for the hero section */
+.hero-section {
+  /* Dark blue gradient background for Intel style */
+  background: linear-gradient(to bottom, #1565c0, #003366);
+  /* Add some padding for spacing */
+  padding: 40px 0;
+  /* Center all content horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Center text inside the section */
+  text-align: center;
+}
+
+/* Center all text tags inside the hero section */
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section p {
+  text-align: center;
+}
+
+.hero-section img {
+  /* Ensure the image is responsive */
+  width: 300px;
+  height: auto;
+  /* Add some margin for spacing */
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5em;
+  color: #e8ebf7;
+}
+
+.hero-section p {
+  font-size: 1.3em;
+  color: #e8ebf7;
+  max-width: 700px;
+}
+
+.card-sec-wrapper {
+  justify-content: center;
+}
+
+.card-section {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  overflow-x: auto;
+  /* Hide vertical scrollbar */
+  overflow-y: hidden;
+  /* Enable horizontal scroll snap */
+  scroll-snap-type: x mandatory;
+  /* Optional: smooth scrolling */
+  scroll-behavior: smooth;
+  /* Prevent vertical scrolling with mouse wheel */
+  overscroll-behavior-x: contain;
+}
+
+/* Each card should snap to the start of its position */
+.card {
+  width: 300px;
+  position: relative;
+  /* Snap each card to the start of the scroll container */
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.card p {
+  display: block;
+  opacity: 0;
+  /* Overlay covers the whole card */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Center the text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Intel blue background with transparency */
+  background: rgba(21, 101, 192, 0.92);
+  color: #fff; /* White text for contrast */
+  font-size: 1em;
+  border-radius: 8px;
+  /* Smooth transition for fade in */
+  transition: opacity 0.3s;
+  z-index: 2;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 300px;
+  height: auto;
+}
+
+
+.card:hover {
+  transition: transform 0.2s;
+}
+
+/* Show the overlay text when hovering over the card */
+.card:hover p {
+  opacity: 1;
+}
+
+/* Fade the card content into the background when hovered */
+.card:hover img,
+.card:hover h2,
+.card:hover h3 {
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+.learn-more {
+  font-size: 1.4em;
+  color: #000000;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+
+}
