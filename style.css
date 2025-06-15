@@ -214,9 +214,13 @@ h1, h2, h3, p {
     scroll-snap-align: start; /* Each card will snap to the top when scrolling */
   }
 
+  .img-wrapper {
+    text-align: center;
+  }
+
   .card img {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
   }
 
