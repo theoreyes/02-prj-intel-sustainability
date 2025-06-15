@@ -3,7 +3,7 @@
   /* Dark blue gradient background for Intel style */
   background: linear-gradient(to bottom, #256fc4, #003366);
   /* Add some padding for spacing */
-  padding: 40px 0;
+  padding: 5px 0;
   /* Center all content horizontally */
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
   justify-content: center;
   /* Center text inside the section */
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 /* Center all text tags inside the hero section */
@@ -24,6 +24,7 @@
 
 .hero-section img {
   /* Ensure the image is responsive */
+  margin-top: 40px;
   width: 125px;
   height: auto;
   /* Add some margin for spacing */
@@ -31,16 +32,17 @@
 }
 
 .hero-section h1 {
-  font-size: 2.7em;
+  font-size: 2.4em;
   color: #e8ebf7;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .hero-section p {
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: #e8ebf7;
   max-width: 700px;
+  padding-bottom: 10px;
 }
 
 .card-sec-wrapper {
@@ -53,6 +55,7 @@
   max-width: 900px;
   display: flex;
   overflow-x: auto;
+  flex-wrap: nowrap;
   /* Hide vertical scrollbar */
   overflow-y: hidden;
   /* Enable horizontal scroll snap */
@@ -103,6 +106,7 @@
   margin-bottom: 20px;
   margin-right: 25px;
   margin-left: 12.5px;
+  cursor: default;
 }
 
 .card p {
@@ -139,22 +143,23 @@
   height: auto;
 }
 
-.card:hover {
+.card.tapped {
   transition: transform 0.2s;
 }
 
 /* Show the overlay text when hovering over the card */
-.card:hover p {
+.card.tapped p {
   opacity: 1;
 }
 
 /* Fade the card content into the background when hovered */
-.card:hover img,
-.card:hover h2,
-.card:hover h3 {
+.card.tapped img,
+.card.tapped h2,
+.card.tapped h3 {
   opacity: 0.25;
   transition: opacity 0.3s;
 }
+
 
 .learn-more {
   font-size: 1.4em;
@@ -167,13 +172,18 @@ h1, h2, h3, p {
 }
 
 @media (max-width: 900px) {
+  .hero-section img {
+    width: 100px; /* Smaller logo for mobile */
+    margin-top: 20px; /* Adjust top margin */
+  }
+
   .hero-section h1 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     max-width: 90%;
   }
 
   .hero-section p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     max-width: 90%;
   }
 
@@ -204,22 +214,19 @@ h1, h2, h3, p {
     scroll-snap-align: start; /* Each card will snap to the top when scrolling */
   }
 
-  .card p {
-    
-  }
-  
   .card img {
     width: 100%;
+    max-width: 400px;
     height: auto;
   }
-  
+
   .card.tapped {
     transition: transform 0.2s;
   }
 
   /* Show the overlay text when hovering over the card */
   .card.tapped p {
-    opacity: 1;
+    opacity: 1;    
   }
 
   /* Fade the card content into the background when hovered */
@@ -230,4 +237,19 @@ h1, h2, h3, p {
     transition: opacity 0.3s;
   }
 
+  .learn-more {
+    font-size: 1.1em;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover p {
+    opacity: 1;
+  }
+
+  .card:hover img,
+  .card:hover h2,
+  .card:hover h3 {
+    opacity: 0.25;
+  }
 }
