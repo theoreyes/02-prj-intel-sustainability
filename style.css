@@ -48,6 +48,7 @@
 }
 
 .card-section {
+  height: 325px;
   margin: 0 auto;
   max-width: 900px;
   display: flex;
@@ -120,7 +121,7 @@
   align-items: center;
   justify-content: center;
   /* Intel blue background with transparency */
-  background: rgba(26, 76, 168, 0.8);
+  background: rgba(0, 58, 128, 0.822);
   color: #fff; /* White text for contrast */
   font-size: 1.05em;
   border-radius: 10px;
@@ -203,8 +204,30 @@ h1, h2, h3, p {
     scroll-snap-align: start; /* Each card will snap to the top when scrolling */
   }
 
+  .card p {
+    
+  }
+  
   .card img {
     width: 100%;
     height: auto;
   }
+  
+  .card.tapped {
+    transition: transform 0.2s;
+  }
+
+  /* Show the overlay text when hovering over the card */
+  .card.tapped p {
+    opacity: 1;
+  }
+
+  /* Fade the card content into the background when hovered */
+  .card.tapped img,
+  .card.tapped h2,
+  .card.tapped h3 {
+    opacity: 0.25;
+    transition: opacity 0.3s;
+  }
+
 }
